@@ -1,0 +1,114 @@
+/* Home.css */
+
+.white-background {
+    background-color: white; /* White background */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+  }
+  
+  .curved-box {
+    border: 2px solid green; /* Bold green border */
+    border-radius: 20px; /* Curved corners */
+    width: 80%; /* Adjust width as necessary */
+    padding: 20px; /* Padding inside the box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  }
+  
+  .white-background {
+    background-color: white;
+    padding: 50px 0; /* Adds space between previous background and white section */
+    display: flex;
+    justify-content: center;
+  }
+  
+  .outer-box {
+    width: 80%;
+    max-width: 1200px; /* Limits the maximum width */
+    padding: 20px;
+    border: 2px solid green;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Flexbox for large screens */
+  .flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allows wrapping for small screens */
+  }
+  
+  /* Image on the left */
+  .image-container {
+    flex: 1; /* Takes equal space as the text */
+    padding-right: 20px;
+  }
+  
+  .monk-image {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+  }
+  
+  /* Text on the right */
+  .text-container {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .title {
+    color: green;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .main-heading {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  
+  .description {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+  
+  .about-us-button {
+    background-color: green;
+    color: white;
+    border: 2px solid green;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .about-us-button:hover {
+    background-color: white;
+    color: green;
+    border-color: green;
+  }
+  
+  /* Responsive: Stack on smaller screens */
+  @media (max-width: 768px) {
+    .flex-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .image-container {
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+  
+    .monk-image {
+      max-width: 100%;
+    }
+  }
+  
