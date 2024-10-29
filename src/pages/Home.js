@@ -3,8 +3,24 @@ import { FaBars, FaAngleDoubleRight, FaEnvelope, FaMapMarkerAlt } from 'react-ic
 import image1 from '../assets/images/image1.jpg';
 import image2 from '../assets/images/image2.jpg';
 import image3 from '../assets/images/image3.jpg';
-import statueImage from '../assets/images/statue.jpg'; // Make sure to import your statue image
+import statueImage from '../assets/images/statue.jpg';
 import './Home.css'; // Import the CSS file here
+import service3 from '../assets/images/service3.jpg';
+import service2 from '../assets/images/service2.jpg';
+import service1 from '../assets/images/service1.jpg';
+import Gallery from '../assets/images/Gallery.jpg';
+import Gallery1 from '../assets/images/Gallery1.jpg';
+import Gallery2 from '../assets/images/Gallery2.jpg';
+import Gallery3 from '../assets/images/Gallery3.jpg';
+import Gallery4 from '../assets/images/Gallery4.jpg';
+import Gallery5 from '../assets/images/Gallery5.jpg';
+import Gallery6 from '../assets/images/Gallery6.jpg';
+import gain from '../assets/images/gain.jpg';
+import image01 from '../assets/images/image01.jpg';
+import image02 from '../assets/images/image02.jpg';
+import image03 from '../assets/images/image03.jpg';
+import { motion } from "framer-motion";
+
 
 const Home = () => {
   const images = [image1, image2, image3];
@@ -57,9 +73,27 @@ const Home = () => {
               style={{ fontSize: '14px', textAlign: 'center', width: '100%', position: 'relative', top: '10px', left: '210px' }}
             >
               <a href="/" className="hover:underline">Home</a>
-              <a href="/about" className="hover:underline">About Us</a>
+
+            {/* About Us Section */}
+            <div className="relative group">
+                <button className="hover:underline">About Us</button>
+                <div className="absolute left-0 hidden group-hover:block bg-white text-black shadow-lg">
+                  <a href="/WhoWeAre" className="block px-4 py-2 hover:bg-gray-200">WhoWeAre</a>
+                  <a href="/Gallery" className="block px-4 py-2 hover:bg-gray-200">Gallery</a>
+                </div>
+              </div>
+
               <a href="/events" className="hover:underline">Events</a>
-              <a href="/charitable-work" className="hover:underline">Charitable Work</a>
+
+            {/* Charitable Work Section */}
+            <div className="relative group">
+                <button className="hover:underline">Charitable Work</button>
+                <div className="absolute left-0 hidden group-hover:block bg-white text-black shadow-lg">
+                  <a href="/Ongoing Projects" className="block px-4 py-2 hover:bg-gray-200">Ongoing Projects</a>
+                  <a href="/Completed Projects" className="block px-4 py-2 hover:bg-gray-200">Completed Projects</a>
+                </div>
+              </div>
+
               <a href="/blog" className="hover:underline">Blogs</a>
 
               {/* Services Section */}
@@ -71,6 +105,7 @@ const Home = () => {
                   <a href="/accommodation" className="block px-4 py-2 hover:bg-gray-200">Accommodation</a>
                 </div>
               </div>
+
 
               <a href="/contact" className="hover:underline">Contact</a>
             </nav>
@@ -118,12 +153,27 @@ const Home = () => {
               left: '5%',
             }}
           >
-            <a href="/reservation">
-              <button className="bg-white text-green-600 border-2 border-white rounded px-4 py-4 flex items-center space-x-2">
-                <span className="text-green-600 text-sm font-bold">Make A Reservation</span>
-                <FaAngleDoubleRight className="text-green-600" />
-              </button>
-            </a>
+            <a href="/reservation"> 
+  <motion.button
+    className="bg-white text-green-600 border-2 border-white rounded px-4 py-4 flex items-center space-x-2"
+    whileHover={{ 
+      scale: 1.05, 
+      backgroundColor: "#d1fae5", // Change to a light green on hover
+      color: "#065f46"  // Dark green text color on hover
+    }} 
+    whileTap={{ 
+      scale: 0.95, 
+      backgroundColor: "#a7f3d0", // Change to an even lighter green on tap
+      color: "#064e3b" // Even darker green text color on tap
+    }} 
+    transition={{ duration: 0.2 }}  // Smooth transition duration
+  >
+    <span className="text-green-600 text-sm font-bold">Make A Reservation</span>
+    <FaAngleDoubleRight className="text-green-600" />
+  </motion.button>
+</a>
+
+
           </div>
         </div>
 
@@ -152,6 +202,7 @@ const Home = () => {
       {/* Scrolling Effect Section */}
       <div className="white-background" style={{ paddingTop: '5rem', marginTop: '-180px' }}>
         {/* Curved Box with Image and Text */}
+        
         <div className="curved-box p-8 bg-white rounded-lg shadow-lg flex flex-col md:flex-row items-center justify-center mx-auto" 
         
         style={{ maxWidth: '900px', width: '90%', height: '350px'}}>
@@ -194,53 +245,71 @@ const Home = () => {
       </div>
 
       {/* New Images Section */}
-      <div className="flex flex-col md:flex-row justify-center mt-4 space-y-4 md:space-y-0 md:space-x-4 mx-auto" style={{ maxWidth: '900px' }}>
-        {/* Image 1: Meditation */}
-        <div className="flex flex-col items-center" style={{ flex: '1 1 300px', maxWidth: '300px',margin: '0 18px' }}>
-          <img src={image1} alt="Meditation" className="rounded-md w-full h-48 object-cover" />
-          <h5 className="text-black font-bold text-2xl mt-5">MEDITATION</h5>
-          <p className="text-gray-600 text-center text-xs mt-4 mb-1">Vimansa Meditation Centre serves its guests primarily as a retreat and meditation centre.</p>
-          <a href="/meditation" className="mt-12">
-            <button className="bg-white text-green-600 border-2 border-green-600 rounded px-4 py-2 flex items-center space-x-2" style={{ width: '140px', height: '60px' }}>
-              <span className="text-sm font-bold">Read more</span>
-              <FaAngleDoubleRight className="text-green-600" />
-            </button>
-          </a>
-        </div>
+<div className="flex flex-col md:flex-row justify-center mt-4 space-y-4 md:space-y-0 md:space-x-4 mx-auto" style={{ maxWidth: '900px' }}>
+  {/* Image 1: Meditation */}
+  <motion.div
+    className="flex flex-col items-center"
+    style={{ flex: '1 1 300px', maxWidth: '400px', margin: '0 18px' }}
+    initial={{ scale: 1 }}
+    whileHover={{ scale: 1.05 }}
+    transition={{ duration: 0.3 }}
+  >
+    <img src={service1} alt="Meditation" className="rounded-md w-full h-48 object-cover" />
+    <h5 className="text-black font-bold text-2xl mt-5">MEDITATION</h5>
+    <p className="text-gray-600 text-center text-xs mt-4 mb-1">Vimansa Meditation Centre serves its guests primarily as a retreat and meditation centre.</p>
+    <a href="/meditation" className="mt-12">
+      <button className="bg-white text-green-600 border-2 border-green-600 rounded px-4 py-2 flex items-center space-x-2 transition-all duration-300 hover:bg-green-600 hover:text-white" style={{ width: '140px', height: '60px' }}>
+        <span className="text-sm font-bold">Read more</span>
+        <FaAngleDoubleRight className="text-green-600" />
+      </button>
+    </a>
+  </motion.div>
 
-        {/* Image 2: Yoga */}
-        <div className="flex flex-col items-center" style={{ flex: '1 1 300px', maxWidth: '300px',margin: '0 18px' }}>
-          <img src={image2} alt="Yoga" className="rounded-md w-full h-48 object-cover" />
-          <h5 className="text-black font-bold text-2xl mt-5">YOGA</h5>
-          <p className="text-gray-600 text-center text-xs mt-4 mb-1">Yoga is a group of physical, mental, and spiritual practices or disciplines.</p>
-          <a href="/yoga" className="mt-12">
-            <button className="bg-white text-green-600 border-2 border-green-600 rounded px-4 py-2 flex items-center space-x-2" style={{ width: '140px', height: '60px' }}>
-              <span className="text-sm font-bold">Read more</span>
-              <FaAngleDoubleRight className="text-green-600" />
-            </button>
-          </a>
-        </div>
+  {/* Image 2: Yoga */}
+  <motion.div
+    className="flex flex-col items-center"
+    style={{ flex: '1 1 300px', maxWidth: '300px', margin: '0 18px' }}
+    initial={{ scale: 1 }}
+    whileHover={{ scale: 1.05 }}
+    transition={{ duration: 0.3 }}
+  >
+    <img src={service2} alt="Yoga" className="rounded-md w-full h-48 object-cover" />
+    <h5 className="text-black font-bold text-2xl mt-5">YOGA</h5>
+    <p className="text-gray-600 text-center text-xs mt-4 mb-1">Yoga is a group of physical, mental, and spiritual practices or disciplines.</p>
+    <a href="/yoga" className="mt-12">
+      <button className="bg-white text-green-600 border-2 border-green-600 rounded px-4 py-2 flex items-center space-x-2 transition-all duration-300 hover:bg-green-600 hover:text-white" style={{ width: '140px', height: '60px' }}>
+        <span className="text-sm font-bold">Read more</span>
+        <FaAngleDoubleRight className="text-green-600" />
+      </button>
+    </a>
+  </motion.div>
 
-        {/* Image 3: Accommodation */}
-        <div className="flex flex-col items-center" style={{ flex: '1 1 300px', maxWidth: '300px',margin: '0 18px' }}>
-          <img src={image3} alt="Accommodation" className="rounded-md w-full h-48 object-cover" />
-          <h5 className="text-black font-bold text-2xl mt-5">ACCOMODATION</h5>
-          <p className="text-gray-600 text-center text-xs mt-4 mb-1">A variety of comfort levels, from luxury to basic, & can also be utilized by guests on a budget who would opt to share rooms.</p>
-          <a href="/accommodation" className="mt-8">
-            <button className="bg-white text-green-600 border-2 border-green-600 rounded px-4 py-2 flex items-center space-x-2" style={{ width: '140px', height: '60px' }}>
-              <span className="text-sm font-bold">Read more</span>
-              <FaAngleDoubleRight className="text-green-600" />
-            </button>
-          </a>
-        </div>
-      </div>
+  {/* Image 3: Accommodation */}
+  <motion.div
+    className="flex flex-col items-center"
+    style={{ flex: '1 1 300px', maxWidth: '300px', margin: '0 18px' }}
+    initial={{ scale: 1 }}
+    whileHover={{ scale: 1.05 }}
+    transition={{ duration: 0.3 }}
+  >
+    <img src={service3} alt="Accommodation" className="rounded-md w-full h-48 object-cover" />
+    <h5 className="text-black font-bold text-2xl mt-5">ACCOMMODATION</h5>
+    <p className="text-gray-600 text-center text-xs mt-4 mb-1">A variety of comfort levels, from luxury to basic, & can also be utilized by guests on a budget who would opt to share rooms.</p>
+    <a href="/accommodation" className="mt-8">
+      <button className="bg-white text-green-600 border-2 border-green-600 rounded px-4 py-2 flex items-center space-x-2 transition-all duration-300 hover:bg-green-600 hover:text-white" style={{ width: '140px', height: '60px' }}>
+        <span className="text-sm font-bold">Read more</span>
+        <FaAngleDoubleRight className="text-green-600" />
+      </button>
+    </a>
+  </motion.div>
+</div>
 
       {/* New Statue Section */}
       <div className="flex flex-col md:flex-row justify-center items-center mt-10 p-5">
         <div className="w-full md:w-1/2 flex justify-center">
           <img
-            src={statueImage}
-            alt="Statue"
+            src={Gallery}
+            alt="StatueImage"
             className="rounded-md w-full h-auto object-cover max-w-2xl"
             style={{ maxWidth: '500px', maxHeight: '500px', marginLeft: '40px' }}
           />
@@ -258,18 +327,131 @@ const Home = () => {
       <div className="flex justify-center mt-10">
         <iframe
           width="2000"
-          height="315"
-          src="https://www.youtube.com/embed/5FmjbRCcKhM" // Replace VIDEO_ID with the actual YouTube video ID
+          height="563"
+          src="https://www.youtube.com/embed/5FmjbRCcKhM"
           title="YouTube video"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           className="rounded-md"
-    style={{ marginLeft: '40px', maxWidth: '1000px' }}
+          style={{ marginLeft: '50px', maxWidth: '1000px' }}
         ></iframe>
+      </div>
+
+      {/* Gallery Section */}
+<div className="text-center my-4">
+  <h3 className="text-green-600 font-bold text-s" style={{ marginTop: '60px', marginBottom: '20px' }}>
+    Discover More
+  </h3>
+  <h4 className="text-black font-bold text-4xl" style={{ marginBottom: '40px' }}>
+    Gallery
+  </h4>
+
+  {/* Grid for images */}
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4 mx-auto" style={{ maxWidth: '1200px', marginBottom: '60px' }}>
+  <motion.div
+    className="flex flex-col items-center"
+    whileHover={{ scale: 1.05 }}
+    transition={{ duration: 0.3 }}
+  >
+    <img src={Gallery1} alt="Gallery 1" className="w-full h-64 object-cover" style={{ margin: '10px' }} />
+  </motion.div>
+  
+  <motion.div
+    className="flex flex-col items-center"
+    whileHover={{ scale: 1.05 }}
+    transition={{ duration: 0.3 }}
+  >
+    <img src={Gallery2} alt="Gallery 2" className="w-full h-64 object-cover" style={{ margin: '10px' }} />
+  </motion.div>
+  
+  <motion.div
+    className="flex flex-col items-center"
+    whileHover={{ scale: 1.05 }}
+    transition={{ duration: 0.3 }}
+  >
+    <img src={Gallery3} alt="Gallery 3" className="w-full h-64 object-cover" style={{ margin: '10px' }} />
+  </motion.div>
+
+  {/* Second Row */}
+  <motion.div
+    className="flex flex-col items-center"
+    whileHover={{ scale: 1.05 }}
+    transition={{ duration: 0.3 }}
+  >
+    <img src={Gallery4} alt="Gallery 4" className="w-full h-64 object-cover" style={{ margin: '10px' }} />
+  </motion.div>
+  
+  <motion.div
+    className="flex flex-col items-center"
+    whileHover={{ scale: 1.05 }}
+    transition={{ duration: 0.3 }}
+  >
+    <img src={Gallery5} alt="Gallery 5" className="w-full h-64 object-cover" style={{ margin: '10px' }} />
+  </motion.div>
+  
+  <motion.div
+    className="flex flex-col items-center"
+    whileHover={{ scale: 1.05 }}
+    transition={{ duration: 0.3 }}
+  >
+    <img src={Gallery6} alt="Gallery 6" className="w-full h-64 object-cover" style={{ margin: '10px' }} />
+  </motion.div>
+</div>
+
+  {/* For More Button */}
+  <button
+    className="border border-green-600 text-green-600 font-bold py-4 px-6 rounded-md hover:bg-green-600 hover:text-white transition-colors duration-300"
+    style={{ marginTop: '-150px' }}
+  >
+    For More &gt;&gt;
+  </button>
+</div>
+
+{/* Additional Section */}
+<div className="bg-cover bg-center h-[400px] flex items-end" style={{ backgroundImage: `url(${gain})` }}>
+        <div className="bg-black w-full py-0 px-6 md:px-16">
+          <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between text-white">
+            
+            {/* Column 1: About Vimansa Meditation */}
+            <div className="md:w-1/3 flex flex-col space-y-4 mt-8">
+              <h3 className="text-xl font-bold text-lime-400">About Vimansa Meditation</h3>
+              <p>Vimansa is a meditation and holistic wellness center</p>
+              <p>in Sri Lanka’s Southern Province, providing a forum</p>
+              <p>for instruction and practice in mindfulness traditions</p>
+              <p>and holistic therapies.</p>
+            </div>
+
+            {/* Column 2: Get In Touch! */}
+            <div className="md:w-1/3 mb-8 md:mb-20 mt-8">
+              <h3 className="text-xl font-bold text-lime-400">Get In Touch!</h3>
+              <p className="mt-8">📍 No.30 Keraminiya Road, Wathugedara, Ambalangoda 80300</p>
+              <p className="mt-2">📞 +94 76 78 71 444 / +94 91 22 52 696</p>
+              <p className="mt-2">✉️ vimansameditation@gmail.com</p>
+            </div>
+
+            {/* Column 3: Gallery */}
+            <div className="md:w-1/3">
+              <h3 className="text-xl font-bold text-lime-400 mt-8">Gallery</h3>
+              <div className="flex space-x-5 mt-8">
+                <img src={image01} alt="Gallery Image 1" className="w-16 h-16 object-cover" />
+                <img src={image02} alt="Gallery Image 2" className="w-16 h-16 object-cover" />
+                <img src={image03} alt="Gallery Image 3" className="w-16 h-16 object-cover" />
+              </div>
+              <div className="mt-8 flex justify-center">
+                <a href="#" className="block">
+                  <button className="bg-transparent text-lime-400 border border-lime-400 px-4 py-2 rounded-lg hover:bg-lime-400 hover:text-black transition-all duration-300">
+                    More
+                    <span className="ml-1"> &gt;&gt; </span> 
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
-};
+}
 
 export default Home;
